@@ -1,66 +1,93 @@
 package de.sandstormmedia.flowstorm;
 
-		import com.intellij.openapi.project.DumbService;
-		import com.intellij.openapi.util.text.StringUtil;
-		import com.intellij.psi.PsiElement;
-		import com.jetbrains.php.lang.psi.elements.MethodReference;
-		import com.jetbrains.php.lang.psi.elements.ParameterList;
-		import com.jetbrains.php.lang.psi.elements.StringLiteralExpression;
-		import com.jetbrains.php.lang.psi.elements.Variable;
-		import com.jetbrains.php.lang.psi.resolve.types.PhpType;
-		import com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider;
-		import com.punktde.typo3storm.helpers.IdeHelper;
-		import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.psi.PsiElement;
+import com.jetbrains.php.PhpIndex;
+import com.jetbrains.php.lang.psi.elements.MethodReference;
+import com.jetbrains.php.lang.psi.elements.PhpNamedElement;
+import com.jetbrains.php.lang.psi.elements.StringLiteralExpression;
+import com.jetbrains.php.lang.psi.elements.Variable;
+import com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider2;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Collection;
 
 
 /**
  * Class implements a type provider that enables auto-completion for
- *
+ * <p/>
  * $objectManager->get('ClassName')
- *
+ * <p/>
  * For further information on PSI etc. see http://confluence.jetbrains.com/display/PhpStorm/PHP+Open+API
  *
  * @author Sebastian Kurfürst
- * @author Michael Knoll (mimi@kaktusteam.de)
  */
-public class ObjectManagerTypeProvider implements PhpTypeProvider {
+public class ObjectManagerTypeProvider implements PhpTypeProvider2 {
 
+	final static char TRIM_KEY = '\u0195';
+
+	/**
+	 * This is the "key" for the object manager autocompletion.
+	 *
+	 * @return
+	 */
+	@Override
+	public char getKey() {
+		return '\u0193';
+	}
+
+	/**
+	 * FIRST STEP: if this method returns a STRING, getBySignature is CALLED.
+	 *
+	 * @param e
+	 * @return
+	 */
 	@Nullable
 	@Override
-	public PhpType getType(PsiElement e) {
-		if (DumbService.getInstance(e.getProject()).isDumb()) {
-			return null;
-		}
+	public String getType(PsiElement e) {
+		if (e instanceof MethodReference && !((MethodReference) e).isStatic()) {
+			MethodReference methodReference = (MethodReference) e;
 
-		if( ! IdeHelper.isPhpWithAutocompleteFeature()){
-			return null;
-		}
+			// 1. Make sure the method is called "get".
+			if (methodReference.getName().equals("get") && methodReference.getFirstChild() instanceof Variable) {
 
-		// Make sure, given element is a non-static method reference
-		if (e instanceof MethodReference && !((MethodReference)e).isStatic()) {
-			MethodReference methodReference = (MethodReference)e;
-			// Make sure, object on which method reference is called is a object manager
-			if (methodReference.getName().equals("get")) {
-				if (methodReference.getFirstChild() instanceof Variable) {
-					Variable objectVariable = (Variable) methodReference.getFirstChild();
-					// Check whether type of variable is an object manager
-					if (objectVariable.getType().getTypes().contains("TYPO3\\Flow\\Object\\ObjectManagerInterface")) {
-						PsiElement[] parameters = methodReference.getParameters();
-						// Make sure, parameters are not empty and first parameter is a string
-						if (parameters.length > 0 && parameters[0] instanceof StringLiteralExpression) {
-							String param = ((StringLiteralExpression)parameters[0]).getContents();
+				Variable objectVariable = (Variable) methodReference.getFirstChild();
+
+				// 2. Check whether type of variable is an object manager
+				if (objectVariable.getType().getTypes().contains("\\TYPO3\\Flow\\Object\\ObjectManagerInterface")) {
+
+					// 3. fetch the first parameter and make sure it is a string
+					PsiElement[] parameters = methodReference.getParameters();
+					if (parameters.length > 0) {
+						PsiElement parameter = parameters[0];
+						if (parameter instanceof StringLiteralExpression) {
+							String param = ((StringLiteralExpression) parameter).getContents();
 							if (StringUtil.isNotEmpty(param)) {
-								// Return new type from first parameter
-								return new PhpType().add(param);
+								// 4. return the method signature + parameter.
+								// I am not sure why methodReference.getSignature() is exactly needed, but that seems to be the case.
+								return methodReference.getSignature() + TRIM_KEY + param;
 							}
 						}
 					}
 				}
 			}
-
 		}
 
 		return null;
 	}
 
+	/**
+	 * SECOND STEP: if getType returns NON-NULL, getBySignature is called.
+	 *
+	 * @param expression
+	 * @param project
+	 * @return
+	 */
+	@Override
+	public Collection<? extends PhpNamedElement> getBySignature(String expression, Project project) {
+		String parameter = expression.substring(expression.lastIndexOf(TRIM_KEY) + 1);
+
+		return PhpIndex.getInstance(project).getAnyByFQN(parameter);
+	}
 }

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0f09744-fe76-4804-943f-7651de6bb2d6" name="Default" comment="" />
+    <list default="true" id="f0f09744-fe76-4804-943f-7651de6bb2d6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlowStorm.ipr" afterPath="$PROJECT_DIR$/FlowStorm.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlowStorm.iws" afterPath="$PROJECT_DIR$/FlowStorm.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/sandstormmedia/flowstorm/ObjectManagerTypeProvider.java" afterPath="$PROJECT_DIR$/src/de/sandstormmedia/flowstorm/ObjectManagerTypeProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+    </list>
     <ignored path="FlowStorm.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +72,7 @@
       <file leaf-file-name="plugin.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="97" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+            <state line="40" column="0" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="750">
               <folding />
             </state>
           </provider>
@@ -76,10 +81,28 @@
       <file leaf-file-name="ObjectManagerTypeProvider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/sandstormmedia/flowstorm/ObjectManagerTypeProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="101" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.6564987" vertical-offset="195" max-vertical-offset="1065">
+            <state line="14" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="-1.8636364" vertical-offset="1030" max-vertical-offset="1470">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logger.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/PhpStorm.app/lib/util.jar!/com/intellij/openapi/diagnostic/Logger.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="57" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhpTypeProvider2.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/PhpStorm.app/plugins/php/lib/php-openapi.jar!/com/jetbrains/php/lang/psi/resolve/types/PhpTypeProvider2.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="1" selection-start="632" selection-end="632" vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="300">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,6 +113,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -158,24 +184,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowstorm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowStorm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlowStorm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -202,8 +210,17 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Plugin.FlowStorm">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="FlowStorm" />
+      <option name="VM_PARAMETERS" value="-Xms128m&#10;-Xmx750m&#10;-XX:MaxPermSize=350m&#10;-XX:ReservedCodeCacheSize=96m&#10;-XX:+UseCompressedOops" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -321,7 +338,21 @@
       <patterns />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="false" name="FlowStorm" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="FlowStorm" />
+      <option name="VM_PARAMETERS" value="-Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=96m -XX:+UseCompressedOops" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Plugin.FlowStorm" />
+    </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -333,12 +364,12 @@
       <changelist id="f0f09744-fe76-4804-943f-7651de6bb2d6" name="Default" comment="" />
       <created>1384078428709</created>
       <updated>1384078428709</updated>
-      <workItem from="1384078431117" duration="702000" />
+      <workItem from="1384078431117" duration="5583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="702000" />
+    <option name="totallyTimeSpent" value="5583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
@@ -349,11 +380,13 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33076924" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -365,7 +398,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -388,16 +420,58 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar:///Applications/PhpStorm.app/plugins/php/lib/php-openapi.jar!/com/jetbrains/php/lang/psi/resolve/types/PhpTypeSignatureKey.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="62" selection-start="266" selection-end="266" vertical-scroll-proportion="0.19189766" vertical-offset="0" max-vertical-offset="469">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/PhpStorm.app/plugins/php/lib/php-openapi.jar!/com/jetbrains/php/lang/psi/resolve/types/PhpType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="43" selection-start="4819" selection-end="4819" vertical-scroll-proportion="0.3508772" vertical-offset="1070" max-vertical-offset="2505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/PhpStorm.app/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="35" selection-start="771" selection-end="771" vertical-scroll-proportion="0.4989605" vertical-offset="0" max-vertical-offset="481">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="23" selection-start="10057" selection-end="10057" vertical-scroll-proportion="0.0" vertical-offset="4478" max-vertical-offset="4905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="97" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+        <state line="40" column="0" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/PhpStorm.app/lib/util.jar!/com/intellij/openapi/diagnostic/Logger.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="57" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/PhpStorm.app/plugins/php/lib/php-openapi.jar!/com/jetbrains/php/lang/psi/resolve/types/PhpTypeProvider2.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="632" selection-end="632" vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="300">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/sandstormmedia/flowstorm/ObjectManagerTypeProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="101" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.6564987" vertical-offset="195" max-vertical-offset="1065">
+        <state line="14" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="-1.8636364" vertical-offset="1030" max-vertical-offset="1470">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

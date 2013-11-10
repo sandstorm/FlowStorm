@@ -40,6 +40,6 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-      <php.typeProvider implementation="de.sandstormmedia.flowstorm.ObjectManagerTypeProvider" />
+      <php.typeProvider2 implementation="de.sandstormmedia.flowstorm.ObjectManagerTypeProvider" />
   </extensions>
 </idea-plugin>
