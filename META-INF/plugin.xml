@@ -2,16 +2,27 @@
   <id>de.sandstormmedia.flowstorm</id>
   <name>FlowStorm</name>
   <version>0.1</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="sebastian.kurfuerst@sandstorm-media.de" url="http://www.sandstorm-media.de">sandstorm|media</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <small>most HTML tags may be used</small>
+      Helpers for TYPO3 Flow and Neos:
+      <ul>
+        <li>ObjectManagerInterface->get() Type Inference</li>
+      </ul>
+
+      Additionally, you should also install the <b>PHP Annotation</b> plugin.<br />
+
+      Work in progress:
+      <ul>
+        <li>autocompletion for class names in strings</li>
+      </ul>
       ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <small>most HTML tags may be used</small>
+      0.1
+      <ul>
+        <li>Initial version.</li>
+      </ul>
       ]]>
   </change-notes>
 
@@ -41,5 +52,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
       <php.typeProvider2 implementation="de.sandstormmedia.flowstorm.ObjectManagerTypeProvider" />
+
+      <!--<completion.contributor language="PHP" implementationClass="de.sandstormmedia.flowstorm.StringClassNameCompletionContributor" />-->
   </extensions>
 </idea-plugin>
